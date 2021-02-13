@@ -1,5 +1,5 @@
 [package]
-name = "sphere-effects"
+name = "spherical-effect"
 version = "0.1.0"
 authors = ["Yoshinori Tanimura <tanimura@ricos.co.jp>"]
 edition = "2018"
@@ -7,3 +7,10 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+glsl-to-spirv = "0.1.7"
+truck-platform = "0.1.0"
+truck-rendimpl = "0.1.5"
+
+[dev-dependencies]
+winit = "*"
+futures = "*"
