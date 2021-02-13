@@ -14,9 +14,15 @@ struct MyApp {
 }
 
 const CODE: &'static str = "
+const vec4 LIGHT = vec4(191, 120, 52, 255) / 255.0;
+const vec4 DARK = vec4(142, 94, 74, 255) / 255.0;
+
 vec4 sphericalColor(in vec3 dir) {
-    float a = abs(dir[2]);
-    return vec4(a, a, a, 1);
+    float t = dir.y / length(dir.zx) * 2.0;
+    float a = t - floor(t);
+    float b = floor(t + 1) - t;
+    float dist = min(a, b) * 2.0;
+    return mix(LIGHT, DARK, dist);
 }
 ";
 

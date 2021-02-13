@@ -37,11 +37,9 @@ vec4 sphericalColor(in vec3 dir) {
 
 impl App for MyApp {
     fn init(device_handler: &DeviceHandler, _: AdapterInfo) -> Self {
-        let camera = Camera::default();
         let mut scene = Scene::new(
             device_handler.clone(),
             &SceneDescriptor {
-                camera,
                 ..Default::default()
             },
         );
